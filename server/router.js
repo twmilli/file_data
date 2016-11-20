@@ -4,6 +4,10 @@ import multer from 'multer';
 
 var upload = multer();
 
+router.get('/favicon.ico', function(req, res){
+   res.sendStatus(200); 
+});
+
 router.get('/', (req,res) => {
     res.sendFile('index.html');
 });
