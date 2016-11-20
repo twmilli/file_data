@@ -2,7 +2,7 @@
   "name": "file_data",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,5 +12,13 @@
     "freecodecamp"
   ],
   "author": "Taylor Milliman",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "babel-require": "^1.0.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
 }
