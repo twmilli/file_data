@@ -1,14 +1,27 @@
 import express from "express";
 var router = express.Router();
+import multer from 'multer';
+
+var upload = multer();
 
 router.get('/', (req,res) => {
     res.sendFile('index.html');
 });
 
-router.post('/file-upload', (req,res) => {
-    console.log(req.body);
-    console.log(req.files);
-    res.send("test");
+router.post('/file-upload', upload.single('user-file'), (req,res) => {
+    
+    if (req.file == undefined){
+        res.json({
+            size: undefined
+        });
+    }
+    else{
+        var size = req.file.size;
+        res.json({
+            "size": size
+        });
+    }
+
 });
 
 module.exports = router;
